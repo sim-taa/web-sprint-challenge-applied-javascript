@@ -60,13 +60,13 @@ In meeting the minimum viable product (MVP) specifications listed below, your pr
 Demonstrate your understanding of this week's concepts by answering the following questions:
 
 1. What is the DOM?
-DOM is an acronym for the Document Object Model. The browser builds this model of a website’s look and behavior when it reads your HTML and Javascript.
+DOM is an acronym for the Document Object Model. The browser builds this model of a website’s look and behavior when it reads the HTML and Javascript.
 
 2. What is an event?
 Being literal, an event is a piece of data-– it’s an object that’s created when a user interacts with the DOM, by taking an action such as clicking, scrolling, or moving their mouse. 
 
 3. What is an event listener?
-An event listener is a method that attaches to an element and waits for a user to interact with the element.
+An event listener is a method that attaches to an element and waits for a user to interact with the element. The method is invoked when the user generates an event.
 
 4. Why would we convert a NodeList into an Array?
  A NodeList is an “array-like object” and not language-specific. So, Javascript methods that we would often like to use on it are not always available until the NodeList is converted into an array.
