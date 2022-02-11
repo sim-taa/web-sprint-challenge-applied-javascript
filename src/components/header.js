@@ -1,4 +1,19 @@
 const Header = (title, date, temp) => {
+  const heading = document.createElement("div"); // <div></div>
+  const spanning1 = document.createElement("span"); // <span></span>
+  const titling = document.createElement("h1"); // <h1></h1>
+  const spanning2 = document.createElement("span"); // <span></span>
+
+  spanning1.textContent = date;
+  titling.textContent = title;
+  spanning2.textContent  = temp;
+
+  heading.appendChild(spanning1); // <div><span></span></div>
+  heading.appendChild(titling); // <div><span><h1></h1></span>
+  heading.appendChild(spanning2);
+
+  return heading;
+
   // TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
@@ -6,12 +21,13 @@ const Header = (title, date, temp) => {
   // The text inside elements will be set using their `textContent` property (NOT `innerText`).
   //
   //  <div class="header">
-  //    <span class="date">{ date }</span>
+  //    <span class="date">{ date }</span>no
   //    <h1>{ title }</h1>
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
 }
+
 
 const headerAppender = (selector) => {
   // TASK 2
@@ -20,6 +36,7 @@ const headerAppender = (selector) => {
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
+
 }
 
 export { Header, headerAppender }
