@@ -13,6 +13,15 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
+const topicsArray = ['javascript', 'bootstrap', 'technology'];
+  document.createElement("div");
+  document.classList.add("topics");
+for (let i = 0; i < topicsArray.length; i++) {
+  document.createElement("div");
+  document.classList.add("tab");
+
+}
+
 }
 
 const tabsAppender = (selector) => {
