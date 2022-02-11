@@ -30,6 +30,8 @@ const Header = (title, date, temp) => {
 
 
 const headerAppender = (selector) => {
+  const selector = ".entry"; //this is from the example, seems very wrong
+  const entryPoint = document.querySelector(selector); //this is from the example, seems very wrong
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
