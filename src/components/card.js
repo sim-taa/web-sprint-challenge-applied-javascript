@@ -29,7 +29,7 @@ const cardAppender = (selector) => {
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
 
-const getArticles = (breed, count) => {
+
   axios.get(`http://localhost:5000/api/articles`)
     .then(resp => {
       resp.articles.javascript.forEach(imageURL => {
@@ -41,7 +41,7 @@ const getArticles = (breed, count) => {
       console.error(err);
     })
     .finally(() => console.log("DONE"))
-}
 
+}
 
 export { Card, cardAppender }

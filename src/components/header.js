@@ -12,6 +12,11 @@ const Header = (title, date, temp) => {
   heading.appendChild(titling); // <div><span><h1></h1></span>
   heading.appendChild(spanning2);
 
+  heading.classList.add("header");
+  spanning1.classList.add("date");
+  spanning2.classList.add("temp");
+  
+
   return heading;
 
   // TASK 1
