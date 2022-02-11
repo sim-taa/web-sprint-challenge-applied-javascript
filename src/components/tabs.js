@@ -13,16 +13,15 @@ const Tabs = (topics) => {
   //   <div class="tab">technology</div>
   // </div>
   //
-const topicsArray = ['javascript', 'bootstrap', 'technology'];
   document.createElement("div");
   document.classList.add("topics");
 for (let i = 0; i < topicsArray.length; i++) {
   document.createElement("div");
   document.classList.add("tab");
-
 }
 
 }
+//const topicsArray = ['javascript', 'bootstrap', 'technology'];
 
 const tabsAppender = (selector) => {
   // TASK 4
@@ -34,4 +33,9 @@ const tabsAppender = (selector) => {
   //
 }
 
+axios.get(`http://localhost:5000/api/topics`)
+  .then(resp => {
+      document.querySelector('.tabs').appendChild(resp.topics)
+  })
+  .catch(err => console.error(err))
 export { Tabs, tabsAppender }
