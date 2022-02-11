@@ -28,6 +28,20 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
+
+const getArticles = (breed, count) => {
+  axios.get(`http://localhost:5000/api/articles`)
+    .then(resp => {
+      resp.articles.javascript.forEach(imageURL => {
+        const dogCard = dogCardMaker({ imageURL, breed });
+        entryPoint.appendChild(Card);
+      })
+    })
+    .catch(err => {
+      console.error(err);
+    })
+    .finally(() => console.log("DONE"))
 }
+
 
 export { Card, cardAppender }
