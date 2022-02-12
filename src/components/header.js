@@ -16,7 +16,6 @@ const Header = (title, date, temp) => {
   spanning1.classList.add("date");
   spanning2.classList.add("temp");
   
-
   return heading;
 
   // TASK 1
@@ -35,15 +34,15 @@ const Header = (title, date, temp) => {
 
 
 const headerAppender = (selector) => {
-  //const selector = ".entry"; //this is from the example, seems very wrong
-  //const entryPoint = document.querySelector(selector); //this is from the example, seems very wrong
+  const entryPoint = document.querySelector(selector); 
+  const myHeader = Header('Best Title','Feb 11','68 degrees F');
+  entryPoint.appendChild(myHeader)
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
   // It should create a header using the Header component above, passing arguments of your choosing.
   // It should append the header to the element in the DOM that matches the given selector.
   //
-
 }
 
 export { Header, headerAppender }
