@@ -1,6 +1,5 @@
 import axios from "axios";
 
-const Card = (article) => {
 
   // TASK 5
   // ---------------------
@@ -20,16 +19,21 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+
+const Card = (article) => {
+
+  console.log(article);
   const articleCard = document.createElement("div");
   const headlineDiv = document.createElement("div");
   const authorDiv = document.createElement("div");
   const imageCont  = document.createElement("div");
+  const image = document.createElement("img");
   const authName = document.createElement("span");
 
   articleCard.appendChild(headlineDiv);
   articleCard.appendChild(authorDiv);
   authorDiv.appendChild(imageCont);
-  imageCont.appendChild(article.image);
+  imageCont.appendChild(image);
   authorDiv.appendChild(authName);
 
   articleCard.classList.add("card");
@@ -37,14 +41,15 @@ const Card = (article) => {
   authorDiv.classList.add("author");
   imageCont.classList.add("img-container");
   headlineDiv.textContent = article.headline;
-  image.src = imageURL;
-  authName.textContent = `By ${article.authName}`;
+  image.src = article.authorPhoto;
+  authName.textContent = `By ${article.authorName}`;
 
   articleCard.addEventListener("click", () => {
-    console.log(article.headline)
+    console.log(article.headline);
+  });
 
+  console.log(articleCard);
   return articleCard;
-  })
 }
 
 const cardAppender = (selector) => {
@@ -57,19 +62,20 @@ const cardAppender = (selector) => {
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
 
-
+  const parentElement = document.querySelector(selector)
+  console.log(selector);
   axios.get(`http://localhost:5000/api/articles`)
     .then(resp => {
-      // resp.articles.javascript.forEach(imageURL => {
-      //   const dogCard = dogCardMaker({ imageURL, breed });
-      //   entryPoint.appendChild(Card);
+      const article = resp.data.articles
       })
-   // })
+
     .catch(err => {
       console.error(err);
     })
     .finally(() => console.log("DONE"))
 
 }
+
+//cardAppender("body");
 
 export { Card, cardAppender }
