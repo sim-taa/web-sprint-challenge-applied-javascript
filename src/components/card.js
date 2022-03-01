@@ -32,11 +32,11 @@ const cardAppender = (selector) => {
 
   axios.get(`http://localhost:5000/api/articles`)
     .then(resp => {
-      resp.articles.javascript.forEach(imageURL => {
-        const dogCard = dogCardMaker({ imageURL, breed });
-        entryPoint.appendChild(Card);
+      // resp.articles.javascript.forEach(imageURL => {
+      //   const dogCard = dogCardMaker({ imageURL, breed });
+      //   entryPoint.appendChild(Card);
       })
-    })
+   // })
     .catch(err => {
       console.error(err);
     })
