@@ -1,4 +1,7 @@
+import axios from "axios";
+
 const Card = (article) => {
+
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
@@ -17,6 +20,31 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+  const articleCard = document.createElement("div");
+  const headlineDiv = document.createElement("div");
+  const authorDiv = document.createElement("div");
+  const imageCont  = document.createElement("div");
+  const authName = document.createElement("span");
+
+  articleCard.appendChild(headlineDiv);
+  articleCard.appendChild(authorDiv);
+  authorDiv.appendChild(imageCont);
+  imageCont.appendChild(article.image);
+  authorDiv.appendChild(authName);
+
+  articleCard.classList.add("card");
+  headlineDiv.classList.add("headline");
+  authorDiv.classList.add("author");
+  imageCont.classList.add("img-container");
+  headlineDiv.textContent = article.headline;
+  image.src = imageURL;
+  authName.textContent = `By ${article.authName}`;
+
+  articleCard.addEventListener("click", () => {
+    console.log(article.headline)
+
+  return articleCard;
+  })
 }
 
 const cardAppender = (selector) => {
