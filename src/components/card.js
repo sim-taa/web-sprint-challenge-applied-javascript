@@ -66,16 +66,19 @@ const cardAppender = (selector) => {
   console.log(selector);
   axios.get(`http://localhost:5000/api/articles`)
     .then(resp => {
-      const article = resp.data.articles
+      const articleTopics = resp.data.articles;
+      
+      const allArticles = Object.values(articleTopics).flat();
+      console.log(allArticles);
+      allArticles.map(article => parentElement.appendChild(Card(article)) ); 
       })
 
     .catch(err => {
       console.error(err);
     })
-    .finally(() => console.log("DONE"))
+    .finally(() => console.log("DONE loading articles in cardAppender"))
 
 }
 
-//cardAppender("body");
 
 export { Card, cardAppender }
